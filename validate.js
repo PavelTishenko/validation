@@ -25,7 +25,7 @@ var fields = form.querySelectorAll('.field'); // take all el-s with field class
 
 form.addEventListener('submit', function(){ // add listener of event to the form el with formWithValidation class
 
-     event.preventDefault();//
+     event.preventDefault();// default action that belongs to the event will not occur
     
      removeValidation();// clear form console from errors
     //  var errors = form.querySelectorAll('.error');
@@ -83,7 +83,7 @@ var checkFieldsPresence = function(){
         if(!fields[i].value){
             console.log('field is blank', fields[i]);
             var error = generateError('Cant be blank');
-            form[i].parentElement.insertBefore(error, fields[i]);   // ****** here I have some mat'uks !! Check plz !
+            fields[i].parentElement.insertBefore(error, fields[i]);   // ****** here I have some mat'uks !! Check plz !
         }
     }
 }
